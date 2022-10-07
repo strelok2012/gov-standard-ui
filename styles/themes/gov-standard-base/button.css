@@ -1,0 +1,92 @@
+@import '../../build.css';
+
+.gsui-button {
+  @mixin shared-styles;
+
+  --gsui-button-radius: var(--gsui-border-radius-small);
+  --gsui-button-border-width: var(--gsui-border-width-small);
+  --gsui-button-font-weight: var(--gsui-font-weight-medium);
+  --gsui-button-outline: var(--gsui-outline-width);
+
+  background-color: var(--gsui-color-basic-brightest);
+  border-color: var(--gsui-color-basic-bright);
+  border-radius: var(--gsui-button-radius);
+  border-style: solid;
+  border-width: var(--gsui-button-border-width);
+  color: var(--gsui-color-basic-darker);
+  font-weight: var(--gsui-button-font-weight);
+  outline: var(--gsui-button-outline) solid transparent;
+  transition-duration: var(--gsui-transition-duration-normal);
+  transition-property: var(--gsui-transition-colors);
+
+  &:hover {
+    background-color: var(--gsui-color-basic-brighter);
+    border-color: var(--gsui-color-basic-normal);
+  }
+
+  &:active {
+    outline-color: var(--gsui-color-basic-brighter);
+  }
+
+  @each $variant in primary, secondary, tertiary {
+    &--$(variant) {
+      background-color: var(--gsui-color-$(variant)-normal);
+      border-color: transparent;
+      color: var(--gsui-color-basic-brightest);
+
+      &:hover {
+        background-color: var(--gsui-color-$(variant)-dark);
+        border-color: var(--gsui-color-$(variant)-dark);
+      }
+
+      &:active {
+        outline-color: var(--gsui-color-$(variant)-brighter);
+      }
+    }
+
+    &--outline&--$(variant) {
+      background-color: transparent;
+      border-color: var(--gsui-color-$(variant)-normal);
+      color: var(--gsui-color-$(variant)-dark);
+
+      &:hover {
+        background-color: var(--gsui-color-$(variant)-brightest);
+        border-color: var(--gsui-color-$(variant)-dark);
+        color: var(--gsui-color-$(variant)-darker);
+      }
+    }
+  }
+
+  @each $intent in info, success, warning, error {
+    &.is-$(intent) {
+      background-color: var(--gsui-color-$(intent)-bright);
+      color: var(--gsui-color-$(intent)-darkest);
+      border-color: transparent;
+
+      &:hover {
+        background-color: var(--gsui-color-$(intent)-normal);
+        border-color: var(--gsui-color-$(intent)-normal);
+      }
+
+      &:active {
+        outline-color: var(--gsui-color-$(intent)-brighter);
+      }
+    }
+
+    &--outline&.is-$(intent) {
+      background-color: transparent;
+      border-color: var(--gsui-color-$(intent)-bright);
+      color: var(--gsui-color-$(intent)-normal);
+
+      &:hover {
+        background-color: var(--gsui-color-$(intent)-brightest);
+        border-color: var(--gsui-color-$(intent)-normal);
+        color: var(--gsui-color-$(intent)-darker);
+      }
+    }
+  }
+
+  &.is-disabled {
+    opacity: 0.75;
+  }
+}

@@ -1,0 +1,9 @@
+.customization {
+  --gsui-grid-gutter-horizontal: 0.35rem;
+  --gsui-grid-gutter-vertical: 0.25rem;
+
+  &__label {
+    font-weight: var(--gsui-font-weight-medium);
+    padding-top: 0.5rem;
+  }
+}

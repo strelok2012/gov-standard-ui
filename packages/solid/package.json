@@ -1,0 +1,29 @@
+{
+  "name": "@gov-standard-ui/solid",
+  "version": "0.0.1",
+  "author": "strelok2012/gov-standard-ui",
+  "description": "gov-standard-ui Solid JS UI Library",
+  "main": "./dist/gov-standard-ui-solid.umd.js",
+  "module": "./dist/gov-standard-ui-solid.es.js",
+  "style": "./dist/gov-standard-ui.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/gov-standard-ui-solid.es.js",
+      "require": "./dist/gov-standard-ui-solid.umd.js"
+    }
+  },
+  "peerDependencies": {
+    "solid-js": "^1.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "ec1a1021a0f8a2e890809258fa491014970311ca"
+}

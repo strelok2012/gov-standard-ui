@@ -1,0 +1,29 @@
+{
+  "name": "@gov-standard-ui/vue",
+  "version": "0.0.1",
+  "author": "strelok2012",
+  "description": "Gov Standard UI Library",
+  "main": "./dist/gov-standard-ui-vue.umd.js",
+  "module": "./dist/gov-standard-ui-vue.es.js",
+  "style": "./dist/gov-standard.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/gov-standard-ui-vue.es.js",
+      "require": "./dist/gov-standard-ui-vue.umd.js"
+    }
+  },
+  "peerDependencies": {
+    "vue": "^3.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "ec1a1021a0f8a2e890809258fa491014970311ca"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@gov-standard-ui/webcomponents",
+  "version": "0.0.1",
+  "author": "strelok2012/gov-standard-ui",
+  "description": "gov-standard-ui Web Components UI Library",
+  "main": "./dist/gov-standard-ui-webcomponents.umd.js",
+  "module": "./dist/gov-standard-ui-webcomponents.es.js",
+  "style": "./dist/gov-standard-ui.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/gov-standard-ui-webcomponents.es.js",
+      "require": "./dist/gov-standard-ui-webcomponents.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "run-s build:**",
+    "build:code": "rollup -c",
+    "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",
+    "build:styles-classes-css": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\"",
+    "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(pa-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\"",
+    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "ec1a1021a0f8a2e890809258fa491014970311ca"
+}
